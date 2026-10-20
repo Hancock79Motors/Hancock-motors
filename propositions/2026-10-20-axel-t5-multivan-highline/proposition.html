@@ -124,7 +124,7 @@ h3 { font-weight: 600; font-size: 10.5pt; margin-bottom: 2mm; }
 .faits dt { font-size: 7.5pt; color: var(--gris-acier); font-weight: 400; }
 .faits dd { font-size: 9.5pt; font-weight: 600; line-height: 1.35; }
 
-.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 7mm; }
+.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 5mm; }
 .texte p + p { margin-top: 2.5mm; }
 ul.liste { list-style: none; }
 ul.liste li { position: relative; padding-left: 4.5mm; margin-bottom: 1.4mm; line-height: 1.45; }
@@ -136,10 +136,10 @@ ul.liste li::before {
   transform: skewX(-12deg);
 }
 .encadre {
-  margin-top: 7mm;
+  margin-top: 5mm;
   border: 0.3mm solid var(--gris-perle);
   border-left: 1.2mm solid var(--rouge);
-  padding: 5mm 6mm;
+  padding: 4mm 6mm;
 }
 .encadre .ligne { display: flex; align-items: center; justify-content: space-between; gap: 6mm; }
 .encadre .etiquette { font-size: 17pt; }
@@ -150,6 +150,13 @@ ul.liste li::before {
 .grille img { width: 100%; height: 63mm; object-fit: cover; display: block; }
 .grille figcaption { font-size: 7.5pt; color: var(--gris-acier); margin-top: 1mm; }
 
+table.carnet { width: 100%; border-collapse: collapse; font-size: 8.5pt; line-height: 1.4; }
+table.carnet th { text-align: left; font-weight: 600; font-size: 7.5pt; color: var(--gris-acier); padding: 0 3mm 1.5mm 0; border-bottom: 0.3mm solid var(--gris-perle); }
+table.carnet td { padding: 1.8mm 3mm 1.8mm 0; border-bottom: 0.3mm solid var(--gris-perle); vertical-align: top; }
+table.carnet td:nth-child(1), table.carnet td:nth-child(2) { white-space: nowrap; font-weight: 600; }
+table.carnet tr.fort td { background: var(--blanc-casse); }
+.grille.trois { grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-top: 4mm; }
+.grille.trois img { height: 38mm; }
 .pied {
   position: absolute;
   left: 16mm; right: 16mm; bottom: 9mm;
@@ -180,7 +187,7 @@ ul.liste li::before {
       <p><b>Livrée à l'entrepôt de Scillé (79).</b><br>Hors carte grise, hors mise à la route.</p>
     </div>
     <dl class="faits">
-      <div><dt>Mise en circulation</dt><dd>Avril 2012</dd></div>
+      <div><dt>Mise en circulation</dt><dd>27 avril 2012</dd></div>
       <div><dt>Kilométrage</dt><dd>144&nbsp;971&nbsp;km</dd></div>
       <div><dt>Moteur</dt><dd>2.0 BiTDI diesel, 1&nbsp;968&nbsp;cm³</dd></div>
       <div><dt>Puissance</dt><dd>180&nbsp;ch (132 kW)</dd></div>
@@ -188,8 +195,8 @@ ul.liste li::before {
       <div><dt>Couleur</dt><dd>Gris argent</dd></div>
       <div><dt>Sellerie</dt><dd>Cuir et alcantara gris</dd></div>
       <div><dt>Places</dt><dd>7, dont 2 pivotantes</dd></div>
-      <div><dt>Norme</dt><dd>Euro 5, 205 g/km</dd></div>
-      <div><dt>Contrôle technique</dt><dd>Allemand, valable jusqu'en mai 2027</dd></div>
+      <div><dt>Entretien</dt><dd>Carnet tamponné depuis 2017</dd></div>
+      <div><dt>Contrôle technique</dt><dd>Sans défaut en mai 2025, valable jusqu'en mai 2027</dd></div>
       <div><dt>Accident</dt><dd>Aucun déclaré</dd></div>
       <div><dt>Clés</dt><dd>2</dd></div>
     </dl>
@@ -209,8 +216,9 @@ ul.liste li::before {
   <div class="corps">
     <h2>La voiture<span class="point"></span></h2>
     <div class="texte">
-      <p>Un Multivan Highline de 2012, le T5 restylé, avec le 2.0 BiTDI de 180&nbsp;ch : le moteur que vous cherchiez. 144&nbsp;971&nbsp;km, immatriculé en Allemagne, sans accident déclaré par le précédent propriétaire. Contrôle technique allemand valable jusqu'en mai 2027, certificat de conformité (COC) fourni, deux clés.</p>
-      <p>Sept places, dont deux sièges pivotants au deuxième rang, sellerie cuir et alcantara grise. Un jeu de quatre pneus hiver est fourni en plus.</p>
+      <p>Un Multivan Highline mis en circulation le 27 avril 2012, le T5 restylé, avec le 2.0 BiTDI de 180&nbsp;ch : le moteur que vous cherchiez. 144&nbsp;971&nbsp;km, immatriculé en Allemagne, sans accident déclaré par le précédent propriétaire.</p>
+      <p>Carnet d'entretien tamponné depuis 2017, avec l'embrayage et le volant moteur bimasse remplacés en janvier 2024. Contrôle technique allemand passé en mai 2025 sans aucun défaut relevé, valable jusqu'en mai 2027. Le kilométrage suit le carnet et le contrôle technique d'un relevé à l'autre. Certificat de conformité (COC) fourni, deux clés.</p>
+      <p>Sept places, dont deux sièges pivotants au deuxième rang, sellerie cuir et alcantara grise. Euro 5, 205 g/km de CO2. Un jeu de quatre pneus hiver est fourni en plus.</p>
     </div>
 
     <div class="colonnes">
@@ -249,7 +257,7 @@ ul.liste li::before {
         <ul class="liste">
           <li><b>Boîte manuelle</b>, six rapports : c'est l'écart avec votre demande, qui portait sur une automatique.</li>
           <li>Jantes de 18 pouces d'une autre marque que Volkswagen (Diewe), inscrites sur la carte grise allemande.</li>
-          <li>Des traces sur les assises, visibles sur les photos : la sellerie est à nettoyer.</li>
+          <li>Des marques d'usage, détaillées avec photos à la page suivante.</li>
         </ul>
       </div>
       <div>
@@ -279,7 +287,49 @@ ul.liste li::before {
   </footer>
 </section>
 
-<!-- Page 3 : extérieur -->
+<!-- Page 3 : entretien et état -->
+<section class="page">
+  <header class="bandeau">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p class="ref"><b>Volkswagen T5 Multivan Highline</b><br>Entretien et état</p>
+  </header>
+  <div class="corps">
+    <h2>Le carnet d'entretien<span class="point"></span></h2>
+    <table class="carnet">
+      <thead><tr><th>Date</th><th>Kilométrage</th><th>Travaux</th><th>Atelier</th></tr></thead>
+      <tbody>
+        <tr><td>Juillet 2017</td><td>38&nbsp;937&nbsp;km</td><td>Inspection, vidange, liquide de frein, filtre d'habitacle</td><td>Volkswagen Utilitaires</td></tr>
+        <tr><td>Août 2018</td><td>58&nbsp;340&nbsp;km</td><td>Entretien avec vidange</td><td>Volkswagen Utilitaires</td></tr>
+        <tr><td>Octobre 2019</td><td>83&nbsp;124&nbsp;km</td><td>Vidange, liquide de frein, filtres à carburant, à air et d'habitacle, vanne EGR</td><td>Garage indépendant</td></tr>
+        <tr><td>Non datée</td><td>132&nbsp;853&nbsp;km</td><td>Inspection, vidange, liquide de frein, filtre d'habitacle</td><td>Garage indépendant</td></tr>
+        <tr class="fort"><td>Janvier 2024</td><td>136&nbsp;537&nbsp;km</td><td><b>Embrayage complet et volant moteur bimasse remplacés</b>, liquide de frein</td><td>Garage indépendant</td></tr>
+        <tr><td>Décembre 2024</td><td>140&nbsp;212&nbsp;km</td><td>Campagne constructeur Volkswagen (23H4)</td><td>Concession Volkswagen</td></tr>
+        <tr class="fort"><td>Mai 2025</td><td>141&nbsp;454&nbsp;km</td><td>Inspection, vidange, liquide de frein, filtre d'habitacle. Le même jour, contrôle technique DEKRA sans défaut relevé.</td><td>Garage indépendant</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:8mm">Ce qu'on voit sur les photos<span class="point"></span></h2>
+    <ul class="liste">
+      <li>Carrosserie : rayures et petits chocs d'usage sur l'aile arrière droite, la poignée de porte avant droite, le rétroviseur droit, la porte et l'aile arrière gauches, le hayon et les deux pare-chocs.</li>
+      <li>Bas de caisse : un départ de rouille en surface, à son extrémité.</li>
+      <li>Intérieur : cuir de l'assise conducteur craquelé, alcantara des sièges marqué, cuir du volant patiné, plastiques du coffre rayés.</li>
+    </ul>
+    <div class="grille trois">
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-1.jpg" alt="Volkswagen T5 Multivan Highline gris — bas de caisse, rouille de surface | Hancock Motors Scillé"><figcaption>Bas de caisse</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-2.jpg" alt="Volkswagen T5 Multivan Highline gris — poignée de porte avant droite rayée | Hancock Motors Scillé"><figcaption>Poignée avant droite</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-3.jpg" alt="Volkswagen T5 Multivan Highline gris — porte arrière gauche | Hancock Motors Scillé"><figcaption>Porte arrière gauche</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-4.jpg" alt="Volkswagen T5 Multivan Highline gris — hayon, petit choc | Hancock Motors Scillé"><figcaption>Hayon</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-5.jpg" alt="Volkswagen T5 Multivan Highline gris — pare-chocs avant rayé | Hancock Motors Scillé"><figcaption>Pare-chocs avant</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-etat-6.jpg" alt="Volkswagen T5 Multivan Highline gris — siège conducteur, cuir craquelé | Hancock Motors Scillé"><figcaption>Siège conducteur</figcaption></figure>
+    </div>
+  </div>
+  <footer class="pied">
+    <span><b>Hancock Motors</b>, Scillé (79)</span>
+    <span>Toby, 06 29 32 42 99, appel, SMS ou WhatsApp</span>
+  </footer>
+</section>
+
+<!-- Page 4 : extérieur -->
 <section class="page">
   <header class="bandeau">
     <img src="assets/logo.png" alt="Hancock Motors">
@@ -302,7 +352,7 @@ ul.liste li::before {
   </footer>
 </section>
 
-<!-- Page 4 : intérieur -->
+<!-- Page 5 : intérieur -->
 <section class="page">
   <header class="bandeau">
     <img src="assets/logo.png" alt="Hancock Motors">
