@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Volkswagen T5 Multivan Highline, proposition Hancock Motors</title>
+<style>
+@font-face {
+  font-family: "Archivo";
+  src: url("assets/archivo-latin.woff2") format("woff2-variations"), url("assets/archivo-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+}
+:root {
+  --rouge: #E51A26;
+  --rouge-profond: #B7151E;
+  --noir: #030404;
+  --texte: #000000;
+  --blanc-casse: #F5F5F2;
+  --gris-perle: #E3E3DF;
+  --gris-acier: #5E6164;
+  --gris-argent: #A7AAAD;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body {
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10pt;
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  color: var(--texte);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* Bandeau logo : le logo n'existe qu'en blanc et rouge, il se pose sur le Noir Hancock. */
+.bandeau {
+  background: var(--noir);
+  height: 26mm;
+  padding: 0 16mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bandeau img { height: 15mm; display: block; }
+.bandeau .ref { color: var(--gris-argent); font-size: 8.5pt; text-align: right; line-height: 1.5; }
+.bandeau .ref b { color: var(--blanc-casse); font-weight: 600; }
+.corps { padding: 10mm 16mm 0; }
+
+.titre, h2 {
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.025em;
+}
+.titre { font-size: 21pt; }
+h2 { font-size: 13pt; margin-bottom: 3mm; }
+h3 { font-weight: 600; font-size: 10.5pt; margin-bottom: 2mm; }
+.point {
+  display: inline-block;
+  width: 0.2em; height: 0.2em;
+  margin-left: 0.06em;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+}
+.sep {
+  display: inline-block;
+  width: 0.42em; height: 0.42em;
+  margin: 0 0.55em 0.12em;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+  vertical-align: middle;
+}
+.sous-titre { font-size: 11pt; font-weight: 600; margin-top: 1.5mm; }
+
+.hero {
+  margin-top: 6mm;
+  width: 100%;
+  height: 124mm;
+  object-fit: cover;
+  display: block;
+}
+.prix-bloc {
+  margin-top: 6mm;
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+}
+.etiquette {
+  display: inline-block;
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.35em 1em;
+  background: var(--rouge);
+  color: #fff;
+  clip-path: polygon(0.36em 0, 100% 0, calc(100% - 0.36em) 100%, 0 100%);
+  white-space: nowrap;
+}
+.prix-bloc .etiquette { font-size: 24pt; }
+.prix-bloc p { font-size: 10pt; line-height: 1.5; }
+.prix-bloc p b { font-weight: 600; }
+
+.faits {
+  margin-top: 7mm;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 0.3mm solid var(--gris-perle);
+}
+.faits div {
+  padding: 2.6mm 3mm 2.6mm 0;
+  border-bottom: 0.3mm solid var(--gris-perle);
+}
+.faits dt { font-size: 7.5pt; color: var(--gris-acier); font-weight: 400; }
+.faits dd { font-size: 9.5pt; font-weight: 600; line-height: 1.35; }
+
+.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 7mm; }
+.texte p + p { margin-top: 2.5mm; }
+ul.liste { list-style: none; }
+ul.liste li { position: relative; padding-left: 4.5mm; margin-bottom: 1.4mm; line-height: 1.45; }
+ul.liste li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.5em;
+  width: 2mm; height: 2mm;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+}
+.encadre {
+  margin-top: 7mm;
+  border: 0.3mm solid var(--gris-perle);
+  border-left: 1.2mm solid var(--rouge);
+  padding: 5mm 6mm;
+}
+.encadre .ligne { display: flex; align-items: center; justify-content: space-between; gap: 6mm; }
+.encadre .etiquette { font-size: 17pt; }
+.encadre ul { margin-top: 3.5mm; }
+
+.grille { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 5mm; }
+.grille figure { margin: 0; }
+.grille img { width: 100%; height: 63mm; object-fit: cover; display: block; }
+.grille figcaption { font-size: 7.5pt; color: var(--gris-acier); margin-top: 1mm; }
+
+.pied {
+  position: absolute;
+  left: 16mm; right: 16mm; bottom: 9mm;
+  border-top: 0.3mm solid var(--gris-perle);
+  padding-top: 3mm;
+  font-size: 7.5pt;
+  color: var(--gris-acier);
+  display: flex;
+  justify-content: space-between;
+}
+.pied b { color: var(--texte); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 : la voiture et son prix -->
+<section class="page">
+  <header class="bandeau">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p class="ref"><b>Proposition pour Axel</b><br>20 octobre 2026</p>
+  </header>
+  <div class="corps">
+    <h1 class="titre">Volkswagen T5 Multivan Highline<span class="point"></span></h1>
+    <p class="sous-titre">2.0 BiTDI 180&nbsp;ch<span class="sep"></span>Avril 2012<span class="sep"></span>144&nbsp;971&nbsp;km<span class="sep"></span>Boîte manuelle<span class="sep"></span>7 places</p>
+    <img class="hero" src="photos/volkswagen-t5-multivan-highline-gris-1.jpg" alt="Volkswagen T5 Multivan Highline gris — trois quarts avant | Hancock Motors Scillé">
+    <div class="prix-bloc">
+      <span class="etiquette">15&nbsp;850&nbsp;€</span>
+      <p><b>Livrée à l'entrepôt de Scillé (79).</b><br>Hors carte grise, hors mise à la route.</p>
+    </div>
+    <dl class="faits">
+      <div><dt>Mise en circulation</dt><dd>Avril 2012</dd></div>
+      <div><dt>Kilométrage</dt><dd>144&nbsp;971&nbsp;km</dd></div>
+      <div><dt>Moteur</dt><dd>2.0 BiTDI diesel, 1&nbsp;968&nbsp;cm³</dd></div>
+      <div><dt>Puissance</dt><dd>180&nbsp;ch (132 kW)</dd></div>
+      <div><dt>Boîte</dt><dd>Manuelle</dd></div>
+      <div><dt>Couleur</dt><dd>Gris argent</dd></div>
+      <div><dt>Sellerie</dt><dd>Cuir et alcantara gris</dd></div>
+      <div><dt>Places</dt><dd>7, dont 2 pivotantes</dd></div>
+      <div><dt>Norme</dt><dd>Euro 5, 205 g/km</dd></div>
+      <div><dt>Contrôle technique</dt><dd>Allemand, valable jusqu'en mai 2027</dd></div>
+      <div><dt>Accident</dt><dd>Aucun déclaré</dd></div>
+      <div><dt>Clés</dt><dd>2</dd></div>
+    </dl>
+  </div>
+  <footer class="pied">
+    <span><b>Hancock Motors</b>, Scillé (79)</span>
+    <span>Toby, 06 29 32 42 99, appel, SMS ou WhatsApp</span>
+  </footer>
+</section>
+
+<!-- Page 2 : description, équipements, à savoir, prix -->
+<section class="page">
+  <header class="bandeau">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p class="ref"><b>Volkswagen T5 Multivan Highline</b><br>2.0 BiTDI 180&nbsp;ch, 2012</p>
+  </header>
+  <div class="corps">
+    <h2>La voiture<span class="point"></span></h2>
+    <div class="texte">
+      <p>Un Multivan Highline de 2012, le T5 restylé, avec le 2.0 BiTDI de 180&nbsp;ch : le moteur que vous cherchiez. 144&nbsp;971&nbsp;km, immatriculé en Allemagne, sans accident déclaré par le précédent propriétaire. Contrôle technique allemand valable jusqu'en mai 2027, certificat de conformité (COC) fourni, deux clés.</p>
+      <p>Sept places, dont deux sièges pivotants au deuxième rang, sellerie cuir et alcantara grise. Un jeu de quatre pneus hiver est fourni en plus.</p>
+    </div>
+
+    <div class="colonnes">
+      <div>
+        <h3>Équipements</h3>
+        <ul class="liste">
+          <li>Navigation RNS 510, écran tactile</li>
+          <li>Climatisation automatique Climatronic, avant et arrière</li>
+          <li>Chauffage stationnaire avec télécommande</li>
+          <li>Sièges avant chauffants</li>
+          <li>Deux sièges pivotants au 2<sup>e</sup> rang</li>
+          <li>Radars avant et arrière, caméra de recul</li>
+          <li>Attelage à rotule amovible</li>
+          <li>Kit mains libres Bluetooth</li>
+          <li>Volant multifonction</li>
+        </ul>
+      </div>
+      <div>
+        <h3>&nbsp;</h3>
+        <ul class="liste">
+          <li>Jantes alliage 18 pouces</li>
+          <li>Direction Servotronic</li>
+          <li>Ordinateur de bord</li>
+          <li>Alarme avec surveillance de l'habitacle</li>
+          <li>ESP, ABS, ASR, aide au démarrage en côte</li>
+          <li>Airbags frontaux, latéraux et rideaux à l'avant</li>
+          <li>Vitres électriques</li>
+          <li>Quatre pneus hiver en plus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="colonnes">
+      <div>
+        <h3>À savoir</h3>
+        <ul class="liste">
+          <li><b>Boîte manuelle</b>, six rapports : c'est l'écart avec votre demande, qui portait sur une automatique.</li>
+          <li>Jantes de 18 pouces d'une autre marque que Volkswagen (Diewe), inscrites sur la carte grise allemande.</li>
+          <li>Des traces sur les assises, visibles sur les photos : la sellerie est à nettoyer.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pas de malus</h3>
+        <ul class="liste">
+          <li>Première immatriculation avant 2015 : pas de malus écologique à l'import.</li>
+          <li>Carte grise dans les Deux-Sèvres : environ 300&nbsp;€ (10 CV fiscaux, taxe régionale réduite de moitié pour un véhicule de plus de 10 ans).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="encadre">
+      <div class="ligne">
+        <h2 style="margin:0">Le prix<span class="point"></span></h2>
+        <span class="etiquette">15&nbsp;850&nbsp;€</span>
+      </div>
+      <ul class="liste">
+        <li>Voiture rapatriée d'Allemagne et livrée à l'entrepôt de Scillé (79).</li>
+        <li>Hors carte grise et hors mise à la route.</li>
+        <li>Estimation de carte grise indicative : le montant exact se calcule sur le certificat de conformité.</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="pied">
+    <span><b>Hancock Motors</b>, Scillé (79)</span>
+    <span>Toby, 06 29 32 42 99, appel, SMS ou WhatsApp</span>
+  </footer>
+</section>
+
+<!-- Page 3 : extérieur -->
+<section class="page">
+  <header class="bandeau">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p class="ref"><b>Volkswagen T5 Multivan Highline</b><br>Les photos, extérieur</p>
+  </header>
+  <div class="corps">
+    <h2>Extérieur<span class="point"></span></h2>
+    <div class="grille">
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-2.jpg" alt="Volkswagen T5 Multivan Highline gris — face avant | Hancock Motors Scillé"><figcaption>Face avant</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-6.jpg" alt="Volkswagen T5 Multivan Highline gris — trois quarts avant droit | Hancock Motors Scillé"><figcaption>Trois quarts avant, côté droit</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-3.jpg" alt="Volkswagen T5 Multivan Highline gris — profil | Hancock Motors Scillé"><figcaption>Profil</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-4.jpg" alt="Volkswagen T5 Multivan Highline gris — trois quarts arrière | Hancock Motors Scillé"><figcaption>Trois quarts arrière</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-5.jpg" alt="Volkswagen T5 Multivan Highline gris — face arrière | Hancock Motors Scillé"><figcaption>Face arrière</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-7.jpg" alt="Volkswagen T5 Multivan Highline gris — jante alliage 18 pouces | Hancock Motors Scillé"><figcaption>Jante alliage 18 pouces</figcaption></figure>
+    </div>
+  </div>
+  <footer class="pied">
+    <span><b>Hancock Motors</b>, Scillé (79)</span>
+    <span>Photos du vendeur, plaques masquées</span>
+  </footer>
+</section>
+
+<!-- Page 4 : intérieur -->
+<section class="page">
+  <header class="bandeau">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p class="ref"><b>Volkswagen T5 Multivan Highline</b><br>Les photos, intérieur</p>
+  </header>
+  <div class="corps">
+    <h2>Intérieur<span class="point"></span></h2>
+    <div class="grille">
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-interieur-8.jpg" alt="Volkswagen T5 Multivan Highline gris — intérieur, poste de conduite | Hancock Motors Scillé"><figcaption>Poste de conduite, navigation RNS 510</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-interieur-11.jpg" alt="Volkswagen T5 Multivan Highline gris — intérieur, compteur à 144&nbsp;940&nbsp;km | Hancock Motors Scillé"><figcaption>Compteur : 144&nbsp;940&nbsp;km le jour des photos</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-interieur-9.jpg" alt="Volkswagen T5 Multivan Highline gris — intérieur, sièges avant | Hancock Motors Scillé"><figcaption>Sièges avant chauffants</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-interieur-10.jpg" alt="Volkswagen T5 Multivan Highline gris — intérieur, sièges pivotants | Hancock Motors Scillé"><figcaption>Deuxième rang, sièges pivotants</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-interieur-12.jpg" alt="Volkswagen T5 Multivan Highline gris — coffre avec les pneus hiver | Hancock Motors Scillé"><figcaption>Coffre, avec les quatre pneus hiver fournis</figcaption></figure>
+      <figure><img src="photos/volkswagen-t5-multivan-highline-gris-13.jpg" alt="Volkswagen T5 Multivan Highline gris — moteur 2.0 BiTDI | Hancock Motors Scillé"><figcaption>Moteur 2.0 BiTDI 180&nbsp;ch</figcaption></figure>
+    </div>
+  </div>
+  <footer class="pied">
+    <span><b>Hancock Motors</b>, Scillé (79)</span>
+    <span>Toby, 06 29 32 42 99, appel, SMS ou WhatsApp</span>
+  </footer>
+</section>
+
+</body>
+</html>
