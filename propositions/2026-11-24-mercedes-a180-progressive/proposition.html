@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Mercedes-Benz A 180 Progressive — Hancock Motors</title>
+<style>
+/* Même gabarit que la proposition Macan S Diesel du 17/11/2026 (fond noir, vouvoiement, prix + accompagnement). */
+@font-face {
+  font-family: "Archivo";
+  src: url("assets/archivo-latin.woff2") format("woff2-variations"), url("assets/archivo-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+}
+:root {
+  --rouge: #E51A26;
+  --rouge-eclat: #FA2E3A;
+  --noir: #030404;
+  --anthracite: #17191B;
+  --graphite: #2B2E31;
+  --blanc-casse: #F5F5F2;
+  --gris-argent: #A7AAAD;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--noir); }
+body {
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+  color: var(--blanc-casse);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 12mm 14mm 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--noir);
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4mm;
+  border-bottom: 0.3mm solid var(--graphite);
+}
+.entete img { height: 15mm; display: block; }
+.entete p { font-size: 9pt; color: var(--gris-argent); }
+.sep {
+  display: inline-block;
+  width: 0.4em; height: 0.4em;
+  margin: 0 0.5em 0.12em;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+  vertical-align: middle;
+}
+
+h1 {
+  margin-top: 8mm;
+  font-size: 25pt;
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+.sous-titre { font-size: 11.5pt; margin-top: 1mm; }
+.hero {
+  margin-top: 5mm;
+  width: 100%;
+  height: 104mm;
+  object-fit: cover;
+  border-radius: 3mm;
+  display: block;
+}
+.tuiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 4mm; }
+.tuiles div { background: var(--anthracite); border-radius: 2.5mm; padding: 3mm 4mm; }
+.tuiles b { display: block; font-size: 15pt; font-stretch: 125%; font-weight: 800; line-height: 1.3; }
+.tuiles span { font-size: 8.5pt; color: var(--gris-argent); }
+
+.prix { display: flex; align-items: center; gap: 6mm; margin-top: 6mm; }
+.etiquette {
+  display: inline-block;
+  font-size: 23pt;
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.4em 1em;
+  background: var(--rouge);
+  color: #fff;
+  clip-path: polygon(0.36em 0, 100% 0, calc(100% - 0.36em) 100%, 0 100%);
+  white-space: nowrap;
+}
+.prix p { font-size: 11pt; line-height: 1.5; }
+.prix p b { font-weight: 600; font-size: 12pt; }
+.note-prix { margin-top: 4mm; font-size: 10pt; }
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin-top: 7mm;
+  margin-bottom: 3mm;
+  font-size: 14pt;
+  font-weight: 600;
+  line-height: 1.3;
+}
+h2::before {
+  content: "";
+  width: 6mm; height: 3mm;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+  flex: none;
+}
+.rubrique { padding: 2.4mm 0; border-bottom: 0.3mm solid var(--graphite); }
+.rubrique dt { font-size: 8.5pt; font-weight: 600; color: var(--rouge-eclat); }
+.rubrique dd { font-size: 10.5pt; }
+.rubrique dd b { font-weight: 600; }
+
+ul.liste { list-style: none; }
+ul.liste li { position: relative; padding-left: 6mm; margin: 0 0 2.2mm; }
+ul.liste li::before {
+  content: "";
+  position: absolute; left: 0.5mm; top: 0.55em;
+  width: 2mm; height: 2mm;
+  background: var(--rouge);
+  transform: skewX(-12deg);
+}
+.encadre { margin-top: 4mm; background: var(--anthracite); border-radius: 2.5mm; padding: 4mm 5mm; }
+.encadre b { display: block; font-weight: 600; }
+
+table.carnet { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.4; }
+table.carnet th { text-align: left; font-size: 8pt; font-weight: 600; color: var(--rouge-eclat); padding: 0 3mm 1.6mm 0; border-bottom: 0.3mm solid var(--graphite); }
+table.carnet td { padding: 2mm 3mm 2mm 0; border-bottom: 0.3mm solid var(--graphite); vertical-align: top; }
+table.carnet td:nth-child(1), table.carnet td:nth-child(2) { white-space: nowrap; }
+table.carnet td:nth-child(3) { color: var(--blanc-casse); }
+table.carnet td:nth-child(4) { color: var(--gris-argent); }
+table.carnet tr.fort td { background: var(--anthracite); }
+table.carnet tr.fort td:first-child { padding-left: 2mm; }
+table.carnet tr td:first-child { padding-left: 2mm; }
+table.carnet th:first-child { padding-left: 2mm; }
+
+.equipement { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+.equipement div { padding: 1.9mm 0; border-bottom: 0.3mm solid var(--graphite); }
+
+.grille { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-top: 5mm; }
+.grille img { width: 100%; height: 56mm; object-fit: cover; border-radius: 2.5mm; display: block; }
+.grille.six img { height: 74mm; }
+.grille.interieur { margin-top: 4mm; }
+.grille.interieur img { height: 45mm; }
+.grille.etat { grid-template-columns: repeat(3, 1fr); margin-top: 4mm; }
+.grille.etat img { height: 36mm; }
+.grille figcaption { font-size: 8pt; color: var(--gris-argent); margin-top: 1mm; }
+
+.pied {
+  position: absolute;
+  left: 14mm; right: 14mm; bottom: 9mm;
+  padding-top: 3mm;
+  border-top: 0.3mm solid var(--graphite);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5pt;
+  color: var(--blanc-casse);
+}
+.equipement h3 { grid-column: 1 / -1; font-size: 8.5pt; font-weight: 600; color: var(--rouge-eclat); margin-top: 3.5mm; padding-bottom: 0.6mm; }
+.equipement h3:first-child { margin-top: 0; }
+.equipement div { padding: 1.5mm 0; }
+.grille.duo img { height: 62mm; }
+.grille.trio { grid-template-columns: repeat(3, 1fr); }
+.grille.trio img { height: 34mm; }
+</style>
+</head>
+<body>
+
+<!-- 1 : la voiture et son prix -->
+<section class="page">
+  <header class="entete">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p>Proposition<span class="sep"></span>24/11/2026</p>
+  </header>
+  <h1>Mercedes-Benz A 180</h1>
+  <p class="sous-titre">Progressive<span class="sep"></span>Noir métallisé<span class="sep"></span>136&nbsp;ch<span class="sep"></span>boîte automatique 7G-DCT<span class="sep"></span>3e main</p>
+  <img class="hero" src="photos/mercedes-a180-progressive-noir-1.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — trois quarts avant | Hancock Motors Scillé">
+  <div class="tuiles">
+    <div><b>07/2020</b><span>Première immatriculation</span></div>
+    <div><b>59&nbsp;000&nbsp;km</b><span>Kilométrage</span></div>
+    <div><b>136&nbsp;ch</b><span>1.3 essence</span></div>
+  </div>
+  <div class="prix">
+    <span class="etiquette">20&nbsp;880&nbsp;€</span>
+    <p><b>Prix de la voiture</b><br>En Allemagne, hors frais en France</p>
+  </div>
+  <p class="note-prix">Avec mon accompagnement (1&nbsp;200&nbsp;€) : <b>22&nbsp;080&nbsp;€</b>, hors carte grise et malus.<br>La carte grise et le malus dépendent du taux de CO₂ exact, que je vérifie sur le certificat de conformité.<br>Livrée chez vous, le Pack Clé en Main est à partir de 2&nbsp;500&nbsp;€ au lieu de 1&nbsp;200&nbsp;€.</p>
+  <footer class="pied"><span>Toby – Hancock Motors<span class="sep"></span>+33 6 29 32 42 99<span class="sep"></span>hancockmotors.fr</span><span>1/4</span></footer>
+</section>
+
+<!-- 2 : historique et état -->
+<section class="page">
+  <header class="entete">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p>Proposition<span class="sep"></span>24/11/2026</p>
+  </header>
+  <h2>Historique et état</h2>
+  <dl>
+    <div class="rubrique"><dt>Vendeur</dt><dd>Garage, Cologne (Allemagne).</dd></div>
+    <div class="rubrique"><dt>Entretien</dt><dd>Carnet d'entretien suivi d'après le garage.</dd></div>
+    <div class="rubrique"><dt>Contrôle technique</dt><dd>Contrôle allemand (TÜV) refait en juin 2026.</dd></div>
+    <div class="rubrique"><dt>Accident</dt><dd>Sans accident d'après le garage.</dd></div>
+    <div class="rubrique"><dt>Propriétaires</dt><dd>Troisième main.</dd></div>
+    <div class="rubrique"><dt>Pneus</dt><dd>Pneus quatre saisons sur jantes alliage 18 pouces.</dd></div>
+  </dl>
+
+  <h2>Avant que vous achetiez, je m'occupe de tout</h2>
+  <ul class="liste">
+    <li>Historique vérifié chez Mercedes-Benz, avec le numéro de châssis</li>
+    <li>Rapport carVertical lancé sur la voiture que vous retenez</li>
+    <li>Questions au garage : entretien, défauts, accident</li>
+    <li>Négociation du prix</li>
+    <li>Démarches d'immatriculation en France</li>
+  </ul>
+  <div class="encadre">
+    <b>Garantie mécanique en option</b>
+    Possible sur 48 mois, résiliable à partir du 13e mois. Elle rembourse jusqu'à 120&nbsp;€ par révision.
+  </div>
+  <footer class="pied"><span>Toby – Hancock Motors<span class="sep"></span>+33 6 29 32 42 99<span class="sep"></span>hancockmotors.fr</span><span>2/4</span></footer>
+</section>
+
+<!-- 3 : équipement -->
+<section class="page">
+  <header class="entete">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p>Proposition<span class="sep"></span>24/11/2026</p>
+  </header>
+  <h2>Équipement</h2>
+  <div class="equipement">
+    <h3>Conduite</h3>
+    <div>Boîte automatique 7G-DCT à double embrayage</div>
+    <div>Modes de conduite Dynamic Select</div>
+    <div>Suspension Agility Control</div>
+    <div>Start-Stop, norme Euro 6d</div>
+    <h3>Extérieur</h3>
+    <div>Finition Progressive</div>
+    <div>Jantes alliage 18 pouces, pneus quatre saisons</div>
+    <div>Phares LED High Performance</div>
+    <div>Calandre diamant</div>
+    <div>Peinture métallisée</div>
+    <div>Rétroviseurs rabattables électriquement</div>
+    <div>Feux de route automatiques adaptatifs</div>
+    <div>Pack Éclairage et visibilité</div>
+    <h3>Intérieur et confort</h3>
+    <div>Combiné d'instruments numérique</div>
+    <div>Sièges avant chauffants</div>
+    <div>Sièges confort à l'avant</div>
+    <div>Sellerie tissu et similicuir ARTICO</div>
+    <div>Volant cuir</div>
+    <div>Climatisation automatique THERMATIC</div>
+    <div>Démarrage sans clé</div>
+    <div>Ciel de pavillon noir</div>
+    <div>Vitres électriques avant et arrière</div>
+    <h3>Multimédia</h3>
+    <div>Navigation MBUX Premium</div>
+    <div>Système multimédia MBUX</div>
+    <div>Commande vocale MBUX étendue</div>
+    <div>Radio numérique DAB</div>
+    <div>Info trafic en temps réel</div>
+    <div>Pavé tactile sur la console centrale</div>
+    <div>Prises USB à l'arrière</div>
+    <div>Surveillance du véhicule à distance</div>
+    <h3>Sécurité et aides à la conduite</h3>
+    <div>Aide au stationnement active</div>
+    <div>Assistant actif de maintien de voie</div>
+    <div>Freinage d'urgence actif</div>
+    <div>Lecture des panneaux</div>
+    <div>Régulateur de vitesse</div>
+    <div>Capteurs de pluie et de luminosité</div>
+    <div>Contrôle de la pression des pneus</div>
+    <div>Appel d'urgence Mercedes-Benz</div>
+  </div>
+  <footer class="pied"><span>Toby – Hancock Motors<span class="sep"></span>+33 6 29 32 42 99<span class="sep"></span>hancockmotors.fr</span><span>3/4</span></footer>
+</section>
+
+<!-- 4 : photos -->
+<section class="page">
+  <header class="entete">
+    <img src="assets/logo.png" alt="Hancock Motors">
+    <p>Proposition<span class="sep"></span>24/11/2026</p>
+  </header>
+  <div class="grille duo">
+    <figure><img src="photos/mercedes-a180-progressive-noir-2.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — face avant | Hancock Motors Scillé"></figure>
+    <figure><img src="photos/mercedes-a180-progressive-noir-3.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — trois quarts arrière | Hancock Motors Scillé"></figure>
+    <figure><img src="photos/mercedes-a180-progressive-noir-interieur-1.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — planche de bord MBUX | Hancock Motors Scillé"></figure>
+    <figure><img src="photos/mercedes-a180-progressive-noir-interieur-2.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — volant et combiné numérique | Hancock Motors Scillé"></figure>
+  </div>
+  <div class="grille trio">
+    <figure><img src="photos/mercedes-a180-progressive-noir-phare.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — phare LED High Performance | Hancock Motors Scillé"></figure>
+    <figure><img src="photos/mercedes-a180-progressive-noir-feu.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — feu arrière LED | Hancock Motors Scillé"></figure>
+    <figure><img src="photos/mercedes-a180-progressive-noir-jante.jpg" alt="Mercedes-Benz Classe A 180 Progressive noire — jante alliage 18 pouces | Hancock Motors Scillé"></figure>
+  </div>
+  <footer class="pied"><span>Toby – Hancock Motors<span class="sep"></span>+33 6 29 32 42 99<span class="sep"></span>hancockmotors.fr</span><span>4/4</span></footer>
+</section>
+
+</body>
+</html>
